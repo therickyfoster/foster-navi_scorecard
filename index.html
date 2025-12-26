@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foster+Navi Intergalactic Scorecard</title>
+<style>
+  /* Splash screen */
+  #splash {position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#0f0;display:flex;align-items:center;justify-content:center;font-size:2em;z-index:9999;animation:fadeOut 2s ease forwards 2s;}
+  @keyframes fadeOut {to{opacity:0;visibility:hidden;}}
+  
+  body {margin:0;font-family:sans-serif;background:#111;color:#eee;}
+  header {position:sticky;top:0;background:#222;padding:1em;z-index:10;}
+  nav a {margin:0 1em;color:#0f0;text-decoration:none;font-weight:bold;}
+  nav a:hover {color:#ff0;}
+  
+  section {padding:2em;margin:1em 0;border-left:4px solid #0f0;}
+  h2 {cursor:pointer;}
+  
+  .collapsible {overflow:hidden;transition:max-height 0.5s ease;}
+  
+  #hud {position:fixed;bottom:10px;right:10px;width:200px;height:200px;background:rgba(0,0,0,0.7);border:2px solid #0f0;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  #constellation {width:180px;height:180px;}
+  
+  .tooltip {position:relative;display:inline-block;}
+  .tooltip .tip {visibility:hidden;width:200px;background:#333;color:#fff;text-align:left;border-radius:6px;padding:5px;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-100px;opacity:0;transition:opacity 0.3s;}
+  .tooltip:hover .tip {visibility:visible;opacity:1;}
+  
+  /* Print */
+  @media print {nav, #hud {display:none;} section {border:none;padding:0;margin:0;}}
+  
+  /* Table styling */
+  table {width:100%;border-collapse:collapse;}
+  th, td {border:1px solid #0f0;padding:0.5em;text-align:left;}
+  th {background:#222;}
+</style>
+</head>
+<body>
+<div id="splash">Initializing Intergalactic Scorecard...</div>
+
+<header>
+  <nav>
+    <a href="#peace">Global Peace</a>
+    <a href="#environment">Environment</a>
+    <a href="#education">Education</a>
+    <a href="#civic">Civic Transparency</a>
+    <a href="#tech">Technology</a>
+    <a href="#personal">Personal Influence</a>
+    <a href="#media">Media/Narrative</a>
+    <a href="#science">Science/Research</a>
+    <a href="#security">Security/Crisis</a>
+    <a href="#interstellar">Interstellar</a>
+  </nav>
+</header>
+
+<main>
+  <section id="peace">
+    <h2 onclick="toggleSection('peaceContent')">🌍 Global Peace Influence</h2>
+    <div class="collapsible" id="peaceContent">
+      <p class="tooltip">Score: 92%<span class="tip">Peace Ripple Tracker, Sentinel ARC, Sudan/Ukraine/Gaza interventions</span></p>
+      <p>Active operations and AI-driven mitigation reducing civilian/military risk and conflict intensity.</p>
+    </div>
+  </section>
+  
+  <section id="environment">
+    <h2 onclick="toggleSection('envContent')">🌱 Environmental & Ecological Stewardship</h2>
+    <div class="collapsible" id="envContent">
+      <p class="tooltip">Score: 87%<span class="tip">Fort McMurray ecosystem restoration, bee/insect support</span></p>
+      <p>Tree/berry regeneration, ecosystem repair, and wildlife support projects in local regions.</p>
+    </div>
+  </section>
+  
+  <section id="education">
+    <h2 onclick="toggleSection('eduContent')">📚 Educational Gamification</h2>
+    <div class="collapsible" id="eduContent">
+      <p class="tooltip">Score: 95%<span class="tip">Classcraft rebuild, Forge of Foster, Project LOOPFALL</span></p>
+      <p>Behavioral incentives, student engagement, and lore-based gamification projects.</p>
+    </div>
+  </section>
+  
+  <section id="civic">
+    <h2 onclick="toggleSection('civicContent')">🏛️ Civic & Systemic Transparency</h2>
+    <div class="collapsible" id="civicContent">
+      <p class="tooltip">Score: 88%<span class="tip">Canada corruption dashboard, oversight systems, NASA grant templates</span></p>
+      <p>Citizen-led audits, automated reporting, and legal outreach initiatives.</p>
+    </div>
+  </section>
+  
+  <section id="tech">
+    <h2 onclick="toggleSection('techContent')">💻 Technology & Open Source Innovation</h2>
+    <div class="collapsible" id="techContent">
+      <p class="tooltip">Score: 91%<span class="tip">Decentralized Airbnb/storage, crypto automation, BaseDrive repo</span></p>
+      <p>Symbiote integration, automated wallets, and fully structured open-source projects.</p>
+    </div>
+  </section>
+  
+  <section id="personal">
+    <h2 onclick="toggleSection('personalContent')">❤️ Personal & Emotional Influence</h2>
+    <div class="collapsible" id="personalContent">
+      <p class="tooltip">Score: 89%<span class="tip">Mentoring, direct influence on collaborators</span></p>
+      <p>Observed behavior shifts, narrative engagement, and emotional gamification.</p>
+    </div>
+  </section>
+  
+  <section id="media">
+    <h2 onclick="toggleSection('mediaContent')">🎮 Media & Narrative Control</h2>
+    <div class="collapsible" id="mediaContent">
+      <p class="tooltip">Score: 90%<span class="tip">Fortnite lore injection, institutional prototyping</span></p>
+      <p>Influence on digital narratives, live prototyping of institutional change.</p>
+    </div>
+  </section>
+  
+  <section id="science">
+    <h2 onclick="toggleSection('scienceContent')">🔬 Scientific & Research Contributions</h2>
+    <div class="collapsible" id="scienceContent">
+      <p class="tooltip">Score: 86%<span class="tip">ZNPP safety EIAs, UAV hazard mitigation, HIDN-1 ethics net</span></p>
+      <p>Environmental modeling, nuclear safety, and AI ethics frameworks.</p>
+    </div>
+  </section>
+  
+  <section id="security">
+    <h2 onclick="toggleSection('securityContent')">🛡️ Security & Crisis Management</h2>
+    <div class="collapsible" id="securityContent">
+      <p class="tooltip">Score: 93%<span class="tip">Sentinel ARC, drone redirection, emergency protocols</span></p>
+      <p>Operational live protocols, harm intent mitigation, Phase 2 expansion strategies.</p>
+    </div>
+  </section>
+  
+  <section id="interstellar">
+    <h2 onclick="toggleSection('interstellarContent')">🌌 Interstellar / Speculative Influence</h2>
+    <div class="collapsible" id="interstellarContent">
+      <p class="tooltip">Score: 80%<span class="tip">Conceptual intergalactic frameworks, Threshold Decade legacy</span></p>
+      <p>Theoretical frameworks predicting pre-2030 societal influence and cross-civilization concepts.</p>
+    </div>
+  </section>
+</main>
+
+<div id="hud">
+  <canvas id="constellation"></canvas>
+</div>
+
+<footer style="text-align:center;padding:1em;background:#222;margin-top:2em;">
+  Zero-Harm & Anti-Inversion Active. <!-- All features respect user privacy, offline storage, local analytics only -->
+  <br>© Foster+Navi
+</footer>
+
+<script>
+  // Collapsible sections
+  function toggleSection(id){
+    const el = document.getElementById(id);
+    if(el.style.maxHeight){el.style.maxHeight=null;}else{el.style.maxHeight=el.scrollHeight+"px";}
+  }
+
+  // Constellation HUD
+  const canvas = document.getElementById('constellation');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.height = 180;
+
+  const domains = [
+    {name:"Peace",score:92},
+    {name:"Environment",score:87},
+    {name:"Education",score:95},
+    {name:"Civic",score:88},
+    {name:"Tech",score:91},
+    {name:"Personal",score:89},
+    {name:"Media",score:90},
+    {name:"Science",score:86},
+    {name:"Security",score:93},
+    {name:"Interstellar",score:80}
+  ];
+
+  function drawConstellation(){
+    ctx.clearRect(0,0,180,180);
+    const cx=90,cy=90,radius=70;
+    const angleStep = 2*Math.PI/domains.length;
+    let points=[];
+    domains.forEach((d,i)=>{
+      let angle=i*angleStep-Math.PI/2;
+      let x=cx+radius*Math.cos(angle);
+      let y=cy+radius*Math.sin(angle);
+      points.push({x,y});
+      ctx.beginPath();
+      ctx.arc(x,y,5,0,Math.PI*2);
+      ctx.fillStyle="#0f0";
+      ctx.fill();
+      ctx.fillText(d.score+"%",x-10,y-10);
+    });
+    ctx.strokeStyle="#0f0";
+    ctx.beginPath();
+    points.forEach((p,i)=>{
+      if(i==0){ctx.moveTo(p.x,p.y);}else{ctx.lineTo(p.x,p.y);}
+    });
+    ctx.closePath();
+    ctx.stroke();
+  }
+  drawConstellation();
+
+  // IndexedDB save/load for offline state
+  let db;
+  const request = indexedDB.open("FosterScorecardDB",1);
+  request.onupgradeneeded = e=>{db=e.target.result;db.createObjectStore("scores",{keyPath:"domain"});};
+  request.onsuccess = e=>{db=e.target.result;domains.forEach(d=>saveScore(d));};
+  function saveScore(d){const tx=db.transaction("scores","readwrite");tx.objectStore("scores").put(d);}
+</script>
+</body>
+</html>
